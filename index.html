@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Do It</title>
-<link rel="icon" href="doit-plain.ico">
+<link rel="icon" href="doit.png" type="image/png">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#3C5FE0">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="doit.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
   --paper-2: #F3ECDB;
   --card: #FFFEFB;
   --ink: #2A2420;
-  --muted: #7A7266;
+  --muted: #787064;
   --line: rgba(42, 36, 32, 0.14);
 
   --accent: #3C5FE0;
@@ -83,7 +83,7 @@
   --paper-2: #D6E8FA;
   --card: #FFFFFF;
   --ink: #17293D;
-  --muted: #5C7690;
+  --muted: #58718A;
   --line: rgba(23, 41, 61, 0.14);
 
   --accent: #2F6FE0;
@@ -111,7 +111,7 @@
   --paper-2: #E1EDDB;
   --card: #FFFFFF;
   --ink: #232E1F;
-  --muted: #657A5C;
+  --muted: #617558;
   --line: rgba(35, 46, 31, 0.14);
 
   --accent: #398456;
@@ -188,6 +188,62 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+:root[data-theme="beige"] {
+  --paper: #EAE0C8;
+  --paper-2: #DDCFA8;
+  --card: #F5EFE0;
+  --ink: #2B1D14;
+  --muted: #756046;
+  --line: rgba(43, 29, 20, 0.16);
+
+  --accent: #6B2737;
+  --accent-ink: #ffffff;
+  --accent-2: #A67C3D;
+  --gold: #B08D3E;
+  --success: #3F5C3F;
+  --danger: #954434;
+  --danger-ink: #ffffff;
+  --focus-ring: rgba(107, 39, 55, 0.32);
+  --success-ring: rgba(63, 92, 63, 0.3);
+
+  --hi-bg: #E8D3D2;   --hi-line: #C99A96;
+  --med-bg: #EDE0BE;  --med-line: #C7A968;
+  --low-bg: #DCE2CE;  --low-line: #A0B389;
+  --none-bg: #E3D8BF; --none-line: #C2B28C;
+
+  --shadow-sm: 0 1px 3px rgba(43, 29, 20, 0.14);
+  --shadow-md: 0 8px 22px rgba(43, 29, 20, 0.16);
+  --shadow-lg: 0 20px 46px rgba(43, 29, 20, 0.22);
+}
+
+:root[data-theme="yellow"] {
+  --paper: #FDF6E0;
+  --paper-2: #FBEBB8;
+  --card: #FFFFFF;
+  --ink: #3D2E10;
+  --muted: #7E6E3E;
+  --line: rgba(61, 46, 16, 0.14);
+
+  --accent: #D9A62E;
+  --accent-ink: #3D2E10;
+  --accent-2: #8A7FBA;
+  --gold: #C99A2E;
+  --success: #8FBF97;
+  --danger: #E8846A;
+  --danger-ink: #3D2E10;
+  --focus-ring: rgba(217, 166, 46, 0.4);
+  --success-ring: rgba(143, 191, 151, 0.35);
+
+  --hi-bg: #FADCD3;   --hi-line: #E8A992;
+  --med-bg: #FBEFC0;  --med-line: #E0C171;
+  --low-bg: #E1EFDD;  --low-line: #A8CBA0;
+  --none-bg: #F5EED9; --none-line: #DDCEA0;
+
+  --shadow-sm: 0 1px 3px rgba(61, 46, 16, 0.10);
+  --shadow-md: 0 8px 22px rgba(61, 46, 16, 0.12);
+  --shadow-lg: 0 20px 46px rgba(61, 46, 16, 0.16);
 }
 
 /* =========================================================
@@ -329,7 +385,7 @@ button, input, select, textarea { font-family: inherit; }
 
 .theme-swatches {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 6px;
 }
 .theme-swatch {
@@ -788,6 +844,7 @@ button, input, select, textarea { font-family: inherit; }
   gap: 14px;
   min-height: 60px;
 }
+.task-list[hidden] { display: none; }
 .task-list.empty { min-height: 120px; }
 .empty-state {
   flex: 1;
@@ -1703,7 +1760,9 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'blue', label: 'Blue', swatch: ['#EAF3FC', '#2F6FE0'] },
     { id: 'sage', label: 'Sage', swatch: ['#EFF5EC', '#398456'] },
     { id: 'pink', label: 'Pink', swatch: ['#FDF0F5', '#C54679'] },
-    { id: 'maroon', label: 'Maroon', swatch: ['#1F0C0D', '#7B1113'] }
+    { id: 'maroon', label: 'Maroon', swatch: ['#1F0C0D', '#7B1113'] },
+    { id: 'beige', label: 'Beige', swatch: ['#EAE0C8', '#6B2737'] },
+    { id: 'yellow', label: 'Yellow', swatch: ['#FDF6E0', '#D9A62E'] }
   ];
 
   /* ---------- Element references ---------- */
